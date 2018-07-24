@@ -16,3 +16,9 @@ const Navigation = ({components}) => {
         </ul>
     )
 }
+
+Navigation.propTypes = {
+    components: PropTypes.array.isRequired
+};
+
+export default Navigation;
