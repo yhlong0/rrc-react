@@ -33,7 +33,7 @@ ProgressBar.propTypes = {
     width: PropTypes.number.isRequired,
 
     /** Bar Height */
-    height: PropTypes.number.isRequired
+    height: PropTypes.number
 };
 
 ProgressBar.defaultProps = {
