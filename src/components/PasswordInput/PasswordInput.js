@@ -42,7 +42,7 @@ class PasswordInput extends React.Component {
                 {
                     showVisibilityToggle &&
                     <a
-                        href="#"
+                        href=""
                         onClick={this.toggleShowPassword}
                         style={{ marginLeft: 5 }}>
                         <EyeIcon />
@@ -60,20 +60,35 @@ PasswordInput.propTypes = {
     /** Unique HTML ID. Used for trying label to HTML input. Handy hook for automated testing. */
     htmlId: PropTypes.string.isRequired,
 
-    /**  */
-    : PropTypes.
+    /** Input name. Recommend setting this to match object's property so a single change handler can be used by convention.*/
+    name: PropTypes.string.isRequired,
 
-    /**  */
-    : PropTypes.
+    /**  Password value*/
+    value: PropTypes.any,
 
-    /**  */
-    : PropTypes.
+    /** Input label */
+    label: PropTypes.string,
 
-    /**  */
-    : PropTypes.
+    /** Function called when password input value changes */
+    onChange: PropTypes.func.isRequired,
 
-    /**  */
-    : PropTypes.
+    /** Max password length accepted */
+    maxLength: PropTypes.number,
+
+    /** Placeholder display when no password is entered */
+    placeholder: PropTypes.string,
+
+    /** Set to true to show the toggle for displaying the currently entered password */
+    showVisibilityToggle: PropTypes.bool,
+
+    /** Display password quality visually via ProgressBar, accept a number between 0 and 100 */
+    error: PropTypes.string
+};
+
+PasswordInput.defaultProps = {
+    maxLength: 50,
+    showVisibilityToggle: false,
+    label: 'Password'
 };
 
 export default PasswordInput;
