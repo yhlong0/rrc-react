@@ -5,7 +5,7 @@ import Label from '../Label';
 /** Text input with integrated label to enforce consistency in layout, error display, label placement */
 function TextInput({ htmlId, name, label, type = "text", required = false, onChange, placeholder, value, error, children, ...props }) {
     return (
-        <div style={{ marginBottom: 16 }}>
+        <div className="textinput">
             <Label htmlFor={htmlId} label={label} required={required} />
             <input
                 id={htmlId}
@@ -14,11 +14,11 @@ function TextInput({ htmlId, name, label, type = "text", required = false, onCha
                 placeholder={placeholder}
                 value={value}
                 onChange={onChange}
-                style={error && { border: 'solid 1px red' }}
+                className={error && 'textinput__input--state-error'}
                 {...props}
             />
             {children}
-            {error && <div className="error" style={{ color: 'red' }}>{error}</div>}
+            {error && <div className="textinput__error">{error}</div>}
         </div>
     );
 }
